@@ -160,6 +160,7 @@ map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR>
     Plugin 'Raimondi/delimitMate'
     Plugin 'Chiel92/vim-autoformat'
     Plugin 'joedicastro/vim-molokai256'
+    Plugin 'brennier/quicktex'
     "Plugin 'vim-airline/vim-airline'
     "Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
@@ -281,3 +282,27 @@ nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>
  " type in \ref{fig: and press you will automatically cycle through
  " all the figure labels. Very useful!
  set iskeyword+=:
+
+ "Quicktex
+ let g:quicktex_tex = {
+    \' '   : "\<ESC>/<+.*+>\<CR>\"_c/+>/e\<CR>",
+    \'m'   : '\( <+++> \) <++>',
+    \'prf' : "\\begin{proof}\<CR><+++>\<CR>\\end{proof}",
+    \'equ' : "\\begin{equation}\<CR><+++>\<CR>\\end{equation}",
+\}
+
+let g:quicktex_math = {
+    \' '    : "\<ESC>/<+.*+>\<CR>\"_c/+>/e\<CR>",
+    \'fr'   : '\mathcal{R} ',
+    \'eq'   : '= ',
+    \'set'  : '\{ <+++> \} <++>',
+    \'frac' : '\frac{<+++>}{<++>} <++>',
+    \'one'  : '1 ',
+    \'st'   : ': ',
+    \'in'   : '\in ',
+    \'bn'   : '\mathbb{N} ',
+    \'xor'   : '\oplus',
+    \'bar'   : '\bar',
+    \'maj'   : '\langle <++> \rangle <++>',
+    \'comple' : '\overline{<+++>}<++>',
+\}
